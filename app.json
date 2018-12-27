@@ -14,8 +14,8 @@
   ],
   "permissions": [],
   "images": {
-    "large": "/assets/images/large.png",
-    "small": "/assets/images/small.png"
+    "large": "/assets/images/logo500x350.png",
+    "small": "/assets/images/logo250x175.png"
   },
   "author": {
     "name": "Nikos Verschore",
@@ -25,6 +25,10 @@
       "id": "max_plus",
       "name": {
         "en": "Thermostat+"
+      },
+      "images": {
+        "large": "/assets/images/logo500x500.png",
+        "small": "/assets/images/logo75x75.png"
       },
       "class": "thermostat",
       "capabilities": ["measure_temperature", "target_temperature", "thermostat_mode", "thermostat_valve"],
@@ -135,6 +139,10 @@
       "name": {
         "en": "Thermostat"
       },
+      "images": {
+        "large": "/assets/images/logo500x500.png",
+        "small": "/assets/images/logo75x75.png"
+      },
       "class": "thermostat",
       "capabilities": ["measure_temperature", "target_temperature", "thermostat_mode", "thermostat_valve"],
       "pair": [{
@@ -243,6 +251,10 @@
       "id": "max_wall",
       "name": {
         "en": "Wall Thermostat"
+      },
+      "images": {
+        "large": "/assets/images/logo500x500.png",
+        "small": "/assets/images/logo75x75.png"
       },
       "class": "thermostat",
       "capabilities": ["measure_temperature", "target_temperature", "thermostat_mode"],
