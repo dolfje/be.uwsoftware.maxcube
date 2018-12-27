@@ -1,0 +1,362 @@
+{
+  "id": "be.uwsoftware.maxcube",
+  "version": "0.0.1",
+  "compatibility": ">=1.5.0",
+  "sdk": 2,
+  "name": {
+    "en": "Max! Cube LAN Gateway"
+  },
+  "description": {
+    "en": "Support for the eQ-3 Max LAN Cube Gateway"
+  },
+  "category": [
+    "climate"
+  ],
+  "permissions": [],
+  "images": {
+    "large": "/assets/images/large.png",
+    "small": "/assets/images/small.png"
+  },
+  "author": {
+    "name": "Nikos Verschore",
+    "email": "nikos@uwsoftware.be"
+  },
+  "drivers": [{
+      "id": "max_plus",
+      "name": {
+        "en": "Thermostat+"
+      },
+      "class": "thermostat",
+      "capabilities": ["measure_temperature", "target_temperature", "thermostat_mode", "thermostat_valve"],
+      "pair": [{
+          "id": "list_devices",
+          "template": "list_devices",
+          "navigation": {
+            "next": "add_devices"
+          }
+        },
+        {
+          "id": "add_devices",
+          "template": "add_devices"
+        }
+      ],
+      "settings": [{
+          "type": "group",
+          "label": {
+            "en": "General settings"
+          },
+          "children": [{
+              "id": "cube_ip",
+              "type": "text",
+              "label": {
+                "en": "IP address of the Max Cube"
+              },
+              "value": ""
+            },
+            {
+              "id": "rf",
+              "type": "text",
+              "label": {
+                "en": "RF address of the device"
+              },
+              "value": ""
+            }
+          ]
+        },
+        {
+          "type": "group",
+          "label": {
+            "en": "Advanced settings"
+          },
+          "children": [{
+              "id": "poll_interval",
+              "type": "number",
+              "label": {
+                "en": "Poll interval"
+              },
+              "value": 60,
+              "attr": {
+                "min": 0
+              },
+              "hint": {
+                "en": "The interval in seconds of polling information from the Max Cube. (0 to disable polling)"
+              }
+            },
+            {
+              "id": "data_refresh_interval",
+              "type": "number",
+              "label": {
+                "en": "Data refresh interval"
+              },
+              "value": 900,
+              "attr": {
+                "min": 0
+              },
+              "hint": {
+                "en": "The temperature information isn't automatically refreshed in the Max Cube. Only after a valve or target temperature change. This will forcefully changing the target temperature every x seconds (0 to disable refreshing)"
+              }
+            },
+            {
+              "id": "max_duty_cycle_refresh",
+              "type": "number",
+              "label": {
+                "en": "Maximum percent of the duty cycle refresh"
+              },
+              "value": 50,
+              "attr": {
+                "min": 0,
+                "max": 100
+              },
+              "hint": {
+                "en": "The cube can only speak for x seconds to the devices. That is a regulatory limitation on the 868Hz. This sets the percentage of sending time that has to be left to do target temperature changes. When over the limit, the force refreshing will stop."
+              }
+            },
+            {
+              "id": "hold_refresh_after_change",
+              "type": "number",
+              "label": {
+                "en": "Hold refresh after change"
+              },
+              "value": 120,
+              "attr": {
+                "min": 0
+              },
+              "hint": {
+                "en": "After changing the target temperature, hold the data refresh for a while. Because the target temperature isn't changed directly on the cube. So old target temperature values would be used in the data refresh."
+              }
+            }
+
+          ]
+        }
+      ]
+    },
+    {
+      "id": "max",
+      "name": {
+        "en": "Thermostat"
+      },
+      "class": "thermostat",
+      "capabilities": ["measure_temperature", "target_temperature", "thermostat_mode", "thermostat_valve"],
+      "pair": [{
+          "id": "list_devices",
+          "template": "list_devices",
+          "navigation": {
+            "next": "add_devices"
+          }
+        },
+        {
+          "id": "add_devices",
+          "template": "add_devices"
+        }
+      ],
+      "settings": [{
+          "type": "group",
+          "label": {
+            "en": "General settings"
+          },
+          "children": [{
+              "id": "cube_ip",
+              "type": "text",
+              "label": {
+                "en": "IP address of the Max Cube"
+              },
+              "value": ""
+            },
+            {
+              "id": "rf",
+              "type": "text",
+              "label": {
+                "en": "RF address of the device"
+              },
+              "value": ""
+            }
+          ]
+        },
+        {
+          "type": "group",
+          "label": {
+            "en": "Advanced settings"
+          },
+          "children": [{
+              "id": "poll_interval",
+              "type": "number",
+              "label": {
+                "en": "Poll interval"
+              },
+              "value": 60,
+              "attr": {
+                "min": 0
+              },
+              "hint": {
+                "en": "The interval in seconds of polling information from the Max Cube. (0 to disable polling)"
+              }
+            },
+            {
+              "id": "data_refresh_interval",
+              "type": "number",
+              "label": {
+                "en": "Data refresh interval"
+              },
+              "value": 900,
+              "attr": {
+                "min": 0
+              },
+              "hint": {
+                "en": "The temperature information isn't automatically refreshed in the Max Cube. Only after a valve or target temperature change. This will forcefully changing the target temperature every x seconds (0 to disable refreshing)"
+              }
+            },
+            {
+              "id": "max_duty_cycle_refresh",
+              "type": "number",
+              "label": {
+                "en": "Maximum percent of the duty cycle refresh"
+              },
+              "value": 50,
+              "attr": {
+                "min": 0,
+                "max": 100
+              },
+              "hint": {
+                "en": "The cube can only speak for x seconds to the devices. That is a regulatory limitation on the 868Hz. This sets the percentage of sending time that has to be left to do target temperature changes. When over the limit, the force refreshing will stop."
+              }
+            },
+            {
+              "id": "hold_refresh_after_change",
+              "type": "number",
+              "label": {
+                "en": "Hold refresh after change"
+              },
+              "value": 120,
+              "attr": {
+                "min": 0
+              },
+              "hint": {
+                "en": "After changing the target temperature, hold the data refresh for a while. Because the target temperature isn't changed directly on the cube. So old target temperature values would be used in the data refresh."
+              }
+            }
+
+          ]
+        }
+      ]
+    },
+    {
+      "id": "max_wall",
+      "name": {
+        "en": "Wall Thermostat"
+      },
+      "class": "thermostat",
+      "capabilities": ["measure_temperature", "target_temperature", "thermostat_mode"],
+      "pair": [{
+          "id": "list_devices",
+          "template": "list_devices",
+          "navigation": {
+            "next": "add_devices"
+          }
+        },
+        {
+          "id": "add_devices",
+          "template": "add_devices"
+        }
+      ],
+      "settings": [{
+          "type": "group",
+          "label": {
+            "en": "General settings"
+          },
+          "children": [{
+              "id": "cube_ip",
+              "type": "text",
+              "label": {
+                "en": "IP address of the Max Cube"
+              },
+              "value": ""
+            },
+            {
+              "id": "rf",
+              "type": "text",
+              "label": {
+                "en": "RF address of the device"
+              },
+              "value": ""
+            }
+          ]
+        },
+        {
+          "type": "group",
+          "label": {
+            "en": "Advanced settings"
+          },
+          "children": [{
+              "id": "poll_interval",
+              "type": "number",
+              "label": {
+                "en": "Poll interval"
+              },
+              "value": 60,
+              "attr": {
+                "min": 0
+              },
+              "hint": {
+                "en": "The interval in seconds of polling information from the Max Cube. (0 to disable polling)"
+              }
+            },
+            {
+              "id": "data_refresh_interval",
+              "type": "number",
+              "label": {
+                "en": "Data refresh interval"
+              },
+              "value": 900,
+              "attr": {
+                "min": 0
+              },
+              "hint": {
+                "en": "The temperature information isn't automatically refreshed in the Max Cube. Only after a valve or target temperature change. This will forcefully changing the target temperature every x seconds (0 to disable refreshing)"
+              }
+            },
+            {
+              "id": "max_duty_cycle_refresh",
+              "type": "number",
+              "label": {
+                "en": "Maximum percent of the duty cycle refresh"
+              },
+              "value": 50,
+              "attr": {
+                "min": 0,
+                "max": 100
+              },
+              "hint": {
+                "en": "The cube can only speak for x seconds to the devices. That is a regulatory limitation on the 868Hz. This sets the percentage of sending time that has to be left to do target temperature changes. When over the limit, the force refreshing will stop."
+              }
+            },
+            {
+              "id": "hold_refresh_after_change",
+              "type": "number",
+              "label": {
+                "en": "Hold refresh after change"
+              },
+              "value": 120,
+              "attr": {
+                "min": 0
+              },
+              "hint": {
+                "en": "After changing the target temperature, hold the data refresh for a while. Because the target temperature isn't changed directly on the cube. So old target temperature values would be used in the data refresh."
+              }
+            }
+
+          ]
+        }
+      ]
+    }
+  ],
+  "capabilities": {
+    "thermostat_valve": {
+      "type": "number",
+      "title": {
+        "en": "Thermostat valve opening"
+      },
+      "getable": true,
+      "setable": false
+    }
+  }
+}
