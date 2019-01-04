@@ -7,7 +7,7 @@ class MaxPlusDriver extends AbstractDriver {
 
     toHomeyDevice(cube, device, deviceInfo) {
     	console.log("Device asked "+device.device_type);
-        if(device.device_type == 6) {
+        if(device.device_type == 6 || device_device_type == 4) {
         	console.log("Found device");
             return super.toHomeyDevice(cube, device, deviceInfo);
         }
