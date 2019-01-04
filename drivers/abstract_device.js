@@ -13,15 +13,21 @@ class AbstractMaxDevice extends Homey.Device {
         this.targetTemperatureInvalid = false;
 
         // Poll the information
-        setInterval(() => this.poll(), this.getSetting("poll_interval")*1000);
-        this.poll();
+        if(this.getSetting("poll_interval")) {
+            setInterval(() => this.poll(), this.getSetting("poll_interval")*1000);
+            this.poll();
+        }
 
         // Actively refresh the information
-        setInterval(() => this.refreshData(), this.getSetting("data_refresh_interval")*1000);
-        this.refreshData();
+        if(this.getSetting("data_refresh_interval")) {
+            setInterval(() => this.refreshData(), this.getSetting("data_refresh_interval")*1000);
+            this.refreshData();
+        }
 
         // register a capability listener
-        this.registerCapabilityListener('target_temperature', (value, opts, callback) => this.onCapabilityTargetTemperature(value, opts, callback));
+        if(this.hasCapability("target_temperature")) {
+            this.registerCapabilityListener('target_temperature', (value, opts, callback) => this.onCapabilityTargetTemperature(value, opts, callback));
+        }
     }
 
     onAdded() {
@@ -45,9 +51,11 @@ class AbstractMaxDevice extends Homey.Device {
                 this.setCapabilityValue("target_temperature", device.setpoint).catch(() => {this.log("target_temperature wrong")});
             if(this.hasCapability("measure_temperature") && device.temp != 0)
                 this.setCapabilityValue("measure_temperature", device.temp).catch(() => {this.log("measure_temperature wrong")});
-
             if(this.hasCapability("thermostat_valve"))
                 this.setCapabilityValue("thermostat_valve", device.valve/100).catch(() => {this.log("thermostat_valve wrong")});
+            if(this.hasCapability("alarm_contact"))
+                this.setCapabilityValue("alarm_contact", device.open).catch(() => {this.log("alarm_contact wrong")});
+
 
             cube.close();
         });

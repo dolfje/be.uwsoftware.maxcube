@@ -1,6 +1,6 @@
 {
   "id": "be.uwsoftware.maxcube",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "compatibility": ">=1.5.0",
   "sdk": 2,
   "name": {
@@ -380,7 +380,81 @@
                 "en": "After changing the target temperature, hold the data refresh for a while. Because the target temperature isn't changed directly on the cube. So old target temperature values would be used in the data refresh."
               }
             }
-
+          ]
+        }
+      ]
+    },
+    {
+      "id": "max_door",
+      "name": {
+        "en": "Window Sensor"
+      },
+      "images": {
+        "large": "drivers/max_wall/assets/images/logo500x500.jpg",
+        "small": "drivers/max_wall/assets/images/logo75x75.jpg"
+      },
+      "class": "sensor",
+      "capabilities": [
+        "alarm_contact"
+      ],
+      "pair": [
+        {
+          "id": "list_devices",
+          "template": "list_devices",
+          "navigation": {
+            "next": "add_devices"
+          }
+        },
+        {
+          "id": "add_devices",
+          "template": "add_devices"
+        }
+      ],
+      "settings": [
+        {
+          "type": "group",
+          "label": {
+            "en": "General settings"
+          },
+          "children": [
+            {
+              "id": "cube_ip",
+              "type": "text",
+              "label": {
+                "en": "IP address of the Max Cube"
+              },
+              "value": ""
+            },
+            {
+              "id": "rf",
+              "type": "text",
+              "label": {
+                "en": "RF address of the device"
+              },
+              "value": ""
+            }
+          ]
+        },
+        {
+          "type": "group",
+          "label": {
+            "en": "Advanced settings"
+          },
+          "children": [
+            {
+              "id": "poll_interval",
+              "type": "number",
+              "label": {
+                "en": "Poll interval"
+              },
+              "value": 60,
+              "attr": {
+                "min": 0
+              },
+              "hint": {
+                "en": "The interval in seconds of polling information from the Max Cube. (0 to disable polling)"
+              }
+            }
           ]
         }
       ]
