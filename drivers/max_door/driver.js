@@ -6,7 +6,7 @@ const AbstractDriver = require('../abstract_driver');
 class MaxPlusDriver extends AbstractDriver {
 
     toHomeyDevice(cube, device, deviceInfo) {
-        if(device.device_type == 6) {
+        if(device.device_type == 4 || device.device_type == 6) {
             return super.toHomeyDevice(cube, device, deviceInfo);
         }
         return false;
