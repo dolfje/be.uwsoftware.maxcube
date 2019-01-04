@@ -21,18 +21,25 @@
     "name": "Nikos Verschore",
     "email": "nikos@uwsoftware.be"
   },
-  "drivers": [{
+  "drivers": [
+    {
       "id": "max_plus",
       "name": {
         "en": "Thermostat+"
       },
       "images": {
-        "large": "/assets/images/logo500x500.png",
-        "small": "/assets/images/logo75x75.png"
+        "large": "drivers/max_plus/assets/images/logo500x500.jpg",
+        "small": "drivers/max_plus/assets/images/logo75x75.jpg"
       },
       "class": "thermostat",
-      "capabilities": ["measure_temperature", "target_temperature", "thermostat_mode", "thermostat_valve"],
-      "pair": [{
+      "capabilities": [
+        "measure_temperature",
+        "target_temperature",
+        "thermostat_mode",
+        "thermostat_valve"
+      ],
+      "pair": [
+        {
           "id": "list_devices",
           "template": "list_devices",
           "navigation": {
@@ -44,12 +51,14 @@
           "template": "add_devices"
         }
       ],
-      "settings": [{
+      "settings": [
+        {
           "type": "group",
           "label": {
             "en": "General settings"
           },
-          "children": [{
+          "children": [
+            {
               "id": "cube_ip",
               "type": "text",
               "label": {
@@ -72,7 +81,8 @@
           "label": {
             "en": "Advanced settings"
           },
-          "children": [{
+          "children": [
+            {
               "id": "poll_interval",
               "type": "number",
               "label": {
@@ -129,7 +139,6 @@
                 "en": "After changing the target temperature, hold the data refresh for a while. Because the target temperature isn't changed directly on the cube. So old target temperature values would be used in the data refresh."
               }
             }
-
           ]
         }
       ]
@@ -140,12 +149,18 @@
         "en": "Thermostat"
       },
       "images": {
-        "large": "/assets/images/logo500x500.png",
-        "small": "/assets/images/logo75x75.png"
+        "large": "drivers/max/assets/images/logo500x500.jpg",
+        "small": "drivers/max/assets/images/logo75x75.jpg"
       },
       "class": "thermostat",
-      "capabilities": ["measure_temperature", "target_temperature", "thermostat_mode", "thermostat_valve"],
-      "pair": [{
+      "capabilities": [
+        "measure_temperature",
+        "target_temperature",
+        "thermostat_mode",
+        "thermostat_valve"
+      ],
+      "pair": [
+        {
           "id": "list_devices",
           "template": "list_devices",
           "navigation": {
@@ -157,12 +172,14 @@
           "template": "add_devices"
         }
       ],
-      "settings": [{
+      "settings": [
+        {
           "type": "group",
           "label": {
             "en": "General settings"
           },
-          "children": [{
+          "children": [
+            {
               "id": "cube_ip",
               "type": "text",
               "label": {
@@ -185,7 +202,8 @@
           "label": {
             "en": "Advanced settings"
           },
-          "children": [{
+          "children": [
+            {
               "id": "poll_interval",
               "type": "number",
               "label": {
@@ -242,7 +260,6 @@
                 "en": "After changing the target temperature, hold the data refresh for a while. Because the target temperature isn't changed directly on the cube. So old target temperature values would be used in the data refresh."
               }
             }
-
           ]
         }
       ]
@@ -253,12 +270,17 @@
         "en": "Wall Thermostat"
       },
       "images": {
-        "large": "/assets/images/logo500x500.png",
-        "small": "/assets/images/logo75x75.png"
+        "large": "drivers/max_wall/assets/images/logo500x500.jpg",
+        "small": "drivers/max_wall/assets/images/logo75x75.jpg"
       },
       "class": "thermostat",
-      "capabilities": ["measure_temperature", "target_temperature", "thermostat_mode"],
-      "pair": [{
+      "capabilities": [
+        "measure_temperature",
+        "target_temperature",
+        "thermostat_mode"
+      ],
+      "pair": [
+        {
           "id": "list_devices",
           "template": "list_devices",
           "navigation": {
@@ -270,12 +292,14 @@
           "template": "add_devices"
         }
       ],
-      "settings": [{
+      "settings": [
+        {
           "type": "group",
           "label": {
             "en": "General settings"
           },
-          "children": [{
+          "children": [
+            {
               "id": "cube_ip",
               "type": "text",
               "label": {
@@ -298,7 +322,8 @@
           "label": {
             "en": "Advanced settings"
           },
-          "children": [{
+          "children": [
+            {
               "id": "poll_interval",
               "type": "number",
               "label": {
