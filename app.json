@@ -28,8 +28,8 @@
         "en": "Thermostat+"
       },
       "images": {
-        "large": "drivers/max_plus/assets/images/logo500x500.jpg",
-        "small": "drivers/max_plus/assets/images/logo75x75.jpg"
+        "large": "drivers/max_plus/assets/images/image500x500.jpg",
+        "small": "drivers/max_plus/assets/images/image75x75.jpg"
       },
       "class": "thermostat",
       "capabilities": [
@@ -149,8 +149,8 @@
         "en": "Thermostat"
       },
       "images": {
-        "large": "drivers/max/assets/images/logo500x500.jpg",
-        "small": "drivers/max/assets/images/logo75x75.jpg"
+        "large": "drivers/max/assets/images/image500x500.jpg",
+        "small": "drivers/max/assets/images/image75x75.jpg"
       },
       "class": "thermostat",
       "capabilities": [
@@ -270,8 +270,8 @@
         "en": "Wall Thermostat"
       },
       "images": {
-        "large": "drivers/max_wall/assets/images/logo500x500.jpg",
-        "small": "drivers/max_wall/assets/images/logo75x75.jpg"
+        "large": "drivers/max_wall/assets/images/image500x500.jpg",
+        "small": "drivers/max_wall/assets/images/image75x75.jpg"
       },
       "class": "thermostat",
       "capabilities": [
@@ -390,8 +390,8 @@
         "en": "Window Sensor"
       },
       "images": {
-        "large": "drivers/max_wall/assets/images/logo500x500.jpg",
-        "small": "drivers/max_wall/assets/images/logo75x75.jpg"
+        "large": "drivers/max_wall/assets/images/image500x500.jpg",
+        "small": "drivers/max_wall/assets/images/image75x75.jpg"
       },
       "class": "sensor",
       "capabilities": [
